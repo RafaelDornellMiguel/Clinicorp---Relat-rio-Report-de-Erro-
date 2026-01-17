@@ -1,18 +1,13 @@
 {
   "version": 2,
   "buildCommand": "pnpm build",
+  "outputDirectory": "dist/public",
   "routes": [
-    { "src": "/assets/(.*)", "dest": "/dist/public/assets/$1" },
-    { "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|txt|map))", "dest": "/dist/public/$1" },
+    { "handle": "filesystem" },
 
-    { "src": "/api/(.*)", "dest": "/dist/index.js" },
-    { "src": "/trpc/(.*)", "dest": "/dist/index.js" },
+    { "src": "^/api/(.*)$", "dest": "/dist/index.js" },
+    { "src": "^/trpc/(.*)$", "dest": "/dist/index.js" },
 
-    { "src": "/(.*)", "dest": "/dist/public/index.html" }
-  ],
-  "functions": {
-    "dist/index.js": {
-      "runtime": "nodejs20.x"
-    }
-  }
+    { "src": "^(.*)$", "dest": "/dist/public/index.html" }
+  ]
 }
