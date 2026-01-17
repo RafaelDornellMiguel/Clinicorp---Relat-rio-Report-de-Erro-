@@ -1,0 +1,8 @@
+{
+  "query": "ALTER TABLE error_reports DROP PRIMARY KEY; ALTER TABLE error_reports ADD PRIMARY KEY(id);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user EEqdpxGDvxYRV5S.941a3b8930fe --database HPNACKiXWErk2X5gieLxyG --execute ALTER TABLE error_reports DROP PRIMARY KEY; ALTER TABLE error_reports ADD PRIMARY KEY(id);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 8200 (HY000) at line 1: Unsupported drop primary key when the table is using clustered index"
+  ]
+}

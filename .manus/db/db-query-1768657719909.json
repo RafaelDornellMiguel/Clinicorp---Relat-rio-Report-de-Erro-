@@ -1,0 +1,9 @@
+{
+  "query": "DROP TABLE IF EXISTS report_comments; DROP TABLE IF EXISTS status_history; DROP TABLE IF EXISTS notifications; DROP TABLE IF EXISTS error_reports;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user EEqdpxGDvxYRV5S.941a3b8930fe --database HPNACKiXWErk2X5gieLxyG --execute DROP TABLE IF EXISTS report_comments; DROP TABLE IF EXISTS status_history; DROP TABLE IF EXISTS notifications; DROP TABLE IF EXISTS error_reports;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1246
+}
