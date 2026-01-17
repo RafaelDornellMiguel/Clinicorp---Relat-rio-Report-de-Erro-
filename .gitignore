@@ -7,8 +7,13 @@ dist/
 build/
 *.dist
 
+# Vercel
+.vercel/
+
 # Environment variables
 .env
+.env.*
+!.env.example
 .env.local
 .env.development.local
 .env.test.local
@@ -105,3 +110,10 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# Drizzle (migrations state/cache)
+drizzle/meta/
+drizzle/*.journal
+
+# Manus (tool cache/metadata)
+.manus/
