@@ -1,16 +1,7 @@
 {
-  "version": 2,
-  "buildCommand": "pnpm build",
-  "builds": [
-    { "src": "dist/public/**", "use": "@vercel/static" },
-    { "src": "dist/index.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-
-    { "src": "^/api/(.*)$", "dest": "dist/index.js" },
-    { "src": "^/trpc/(.*)$", "dest": "dist/index.js" },
-
-    { "src": "^(?!/api/|/trpc/).*$", "dest": "dist/public/index.html" }
-  ]
+  "buildCommand": "corepack enable && corepack prepare pnpm@10.4.1 --activate && pnpm install --frozen-lockfile && pnpm build",
+  "installCommand": "corepack enable && corepack prepare pnpm@10.4.1 --activate && pnpm install --frozen-lockfile",
+  "devCommand": "pnpm dev",
+  "framework": null,
+  "outputDirectory": "dist"
 }
