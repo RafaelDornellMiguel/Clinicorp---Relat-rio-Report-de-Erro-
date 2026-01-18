@@ -6,10 +6,11 @@
     { "src": "dist/index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "handle": "filesystem" },
+    { "src": "/api/(.*)", "dest": "dist/index.js" },
+    { "src": "/trpc/(.*)", "dest": "dist/index.js" },
 
-    { "src": "^/api/(.*)$", "dest": "dist/index.js" },
-    { "src": "^/trpc/(.*)$", "dest": "dist/index.js" },
+    { "src": "/assets/(.*)", "dest": "dist/public/assets/$1" },
+    { "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|txt|map|webp|woff2?|ttf))", "dest": "dist/public/$1" },
 
     { "src": "/(.*)", "dest": "dist/public/index.html" }
   ]
