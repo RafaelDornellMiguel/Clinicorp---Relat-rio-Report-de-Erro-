@@ -117,3 +117,4 @@ drizzle/*.journal
 
 # Manus (tool cache/metadata)
 .manus/
+.vercel
